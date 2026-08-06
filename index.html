@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-w4cY4zCYn2roCU1BSEmsdMGBiqBBJnkrP+Gx7ztCigGLjRPU7VZiGlPZp7PYX9CKmuzrPAV2U6Qxh6XYe8WQng==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Ridho Ramadhan</title>
+</head>
+<body class="bg-light dark:bg-dark">
+  <!-- <div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">
+    ❅
+    </div>
+    <div class="snowflake">
+    ❅
+    </div>
+    <div class="snowflake">
+    ❆
+    </div>
+    <div class="snowflake">
+    ❄
+    </div>
+    <div class="snowflake">
+    ❅
+    </div>
+    <div class="snowflake">
+    ❆
+    </div>
+    <div class="snowflake">
+    ❄
+    </div>
+    <div class="snowflake">
+    ❅
+    </div>
+    <div class="snowflake">
+    ❆
+    </div>
+    <div class="snowflake">
+    ❄
+    </div>
+  </div> -->
+
+  <div class="card-suits" aria-hidden="true">
+    <svg class="card-suit suit-spade" viewBox="0 0 24 24"><path d="M12,2 C12,2 4,9 4,14 C4,17 6.5,19 9,18.5 C9,18.5 8,21 6,22 L18,22 C16,21 15,18.5 15,18.5 C17.5,19 20,17 20,14 C20,9 12,2 12,2 Z" fill="none" stroke="currentColor" stroke-width="0.6"/></svg>
+    <svg class="card-suit suit-club" viewBox="0 0 24 24"><path d="M12,3 C9.5,3 7.6,5 7.8,7.4 C5.4,7 3,8.9 3,11.5 C3,14.1 5.1,16.2 7.7,16.2 C9,16.2 10.1,15.7 10.9,14.9 C10.6,16.6 9.7,19 8,21 L16,21 C14.3,19 13.4,16.6 13.1,14.9 C13.9,15.7 15,16.2 16.3,16.2 C18.9,16.2 21,14.1 21,11.5 C21,8.9 18.6,7 16.2,7.4 C16.4,5 14.5,3 12,3 Z" fill="none" stroke="currentColor" stroke-width="0.6"/></svg>
+    <svg class="card-suit suit-heart" viewBox="0 0 24 24"><path d="M12,21 C12,21 3,14.5 3,8.5 C3,5.5 5.5,3 8.5,3 C10.2,3 11.5,3.8 12,5 C12.5,3.8 13.8,3 15.5,3 C18.5,3 21,5.5 21,8.5 C21,14.5 12,21 12,21 Z" fill="none" stroke="currentColor" stroke-width="0.6"/></svg>
+    <svg class="card-suit suit-diamond" viewBox="0 0 24 24"><path d="M12,2 L21,12 L12,22 L3,12 Z" fill="none" stroke="currentColor" stroke-width="0.6"/></svg>
+  </div>
+
+    <!-- Navigation Start -->
+    <aside class="fixed w-full px-10 py-4 lg:w-[200px] lg:pt-[300px] lg:block z-[999]">
+      <div class="bg-dark-50 rounded-full py-3 px-3 bg-opacity-10 backdrop-filter backdrop-blur-sm flex items-center justify-between gap-1 lg:flex-col lg:block lg:bg-transparent lg:backdrop-none lg:py-0 lg:px-0 lg:backdrop-blur-0
+      dark:bg-light dark:bg-opacity-10 dark:backdrop-filter dark:backdrop-blur-sm dark:lg:flex-col dark:lg:block dark:lg:bg-transparent lg:backdrop-none dark:lg:py-0 dark:lg:px-0 dark:lg:backdrop-blur-0">
+          <div class="lg:mb-20 hover:scale-110 transition duration-300">
+            <a href="#home" class="text-dark hover:text-red focus:text-red focus:outdivne-none flex {{ request()->is('home') ? '' : '' }} active-link
+              dark:text-light dark:hover:text-blue dark:focus:text-blue">
+                  <svg class="w-[15px] mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M10,1 L18,10 L10,19 L2,10 L10,1 Z" fill="currentColor"/>
+                  </svg>          
+                <span class="text-xs lg:text-xl">Home</span>
+            </a>
+          </div>
+          <div class="lg:mb-20 hover:scale-110 transition duration-300">
+            <a href="#about" class="text-dark hover:text-red focus:text-red focus:outdivne-none flex {{ request()->is('about') ? '' : '' }}
+              dark:text-light dark:hover:text-blue dark:focus:text-blue">
+                  <svg class="w-[15px] mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M10,1 L18,10 L10,19 L2,10 L10,1 Z" fill="currentColor"/>
+                  </svg>          
+                <span class="text-xs lg:text-xl">About</span>
+            </a>
+          </div>
+          <div class="lg:mb-20 hover:scale-110 transition duration-300">
+            <a href="#skill" class="text-dark hover:text-red focus:text-red focus:outline-none flex
+              dark:text-light dark:hover:text-blue dark:focus:text-blue">
+
+              <svg class="w-[15px] mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M10,1 L18,10 L10,19 L2,10 L10,1 Z" fill="currentColor"/>
+              </svg>
+
+              <span class="text-xs lg:text-xl">Skill</span>
+
+            </a>
+          </div>
+          <div class="lg:mb-20 hover:scale-110 transition duration-300">
+            <a href="#works" class="text-dark hover:text-red focus:text-red focus:outdivne-none flex {{ request()->is('works') ? '' : '' }}
+              dark:text-light dark:hover:text-blue dark:focus:text-blue">
+                  <svg class="w-[15px] mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M10,1 L18,10 L10,19 L2,10 L10,1 Z" fill="currentColor"/>
+                  </svg>          
+                <span class="text-xs lg:text-xl">Works</span>
+            </a>
+          </div>
+          <div class="lg:mb-20 hover:scale-110 transition duration-300">
+            <a href="#contact" class="text-dark hover:text-red focus:text-red focus:outdivne-none flex {{ request()->is('contact') ? '' : '' }}
+              dark:text-light dark:hover:text-blue dark:focus:text-blue">
+                  <svg class="w-[15px] mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M10,1 L18,10 L10,19 L2,10 L10,1 Z" fill="currentColor"/>
+                  </svg>          
+                <span class="text-xs lg:text-xl">Contact</span>
+            </a>
+          </div>
+        </div>
+    </aside>
+    <!-- Navigation End -->
+
+    <!-- Toggle Mode Start -->
+    <aside class="fixed right-0 w-full px-14 my-16 lg:w-[200px] lg:pt-[362px] lg:block lg:px-10">
+            <div class="flex items-center justify-between gap-1 lg:flex-col lg:block">
+              <div class="lg:mb-20">
+                <button id="light-btn" class="text-dark lg:ml-8 hover:text-red focus:text-red focus:outdivne-none active flex lg:flex-row-reverse items-center justify-center
+                dark:text-light dark:hover:text-blue">
+                  <svg class="order-first w-4 mr-2 lg:mr-0 lg:ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M10,1 L18,10 L10,19 L2,10 L10,1 Z" fill="currentColor"/>
+                  </svg>
+                  <span class="text-sm lg:text-xl">Light</span>
+                </button>
+              </div>
+              <div class="lg:mb-20">
+                <button id="dark-btn" class="text-dark lg:ml-11 hover:text-red focus:text-red focus:outdivne-none flex flex-row-reverse items-center justify-center
+                dark:text-light dark:hover:text-blue dark:focus:text-blue">
+                  <span class="text-sm lg:text-xl">Dark</span>
+                  <svg class="order-first w-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M10,1 L18,10 L10,19 L2,10 L10,1 Z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+    </aside>
+    <!-- Toggle Mode End -->
+
+    <!-- Hero Section Start -->
+    <section id="home" class="w-full h-screen flex items-center justify-center">
+        <div class="container mx-auto text-center lg:px-[180px]">
+            <div class="animate-pulse flex flex-wrap w-full text-xl px-4 items-center justify-center mb-3 lg:flex lg:text-[60px] lg:mb-10">
+                <h1 class="font-bold text-dark 
+                dark:text-light">HI! I'M</h1>
+                <span class="flex items-center justify-center ml-4 font-bold text-dark lg:ml-8
+                dark:text-light">RIDHO RAMADHAN</span>
+            </div>
+            <!-- <div class="flex items-center justify-center w-full px-4">
+                <span class="text-xs lg:text-lg text-center">SOFTWARE ENGINEER AND UX/UI DESIGNER.</span>
+            </div> -->
+            <div>
+              <h2 class="text-sm lg:text-xl text-center text-red hover:scale-110 transition duration-300
+              dark:text-blue">Software Engineer, UI/UX & Graphic Designer, and Technical Presales</h2><br>
+              <h2 class="text-dark text-xs lg:text-lg text-center w-full px-4 hover:scale-110 transition duration-300
+              dark:text-light"> With 3 years of experience across UX design, visual development, and application engineering, I've built a strong foundation in turning ideas into functional, user-centered products. Along the way, I've expanded into technical consulting, product presentations, and AI-driven solutions.
+              </h2>
+              <br>
+              <h2 class="text-dark text-xs lg:text-lg text-center w-full px-4 hover:scale-110 transition duration-300
+              dark:text-light"> I thrive at the intersection of creativity, technology, and business. bridging design and technical needs, collaborating with diverse teams, and continuously adapting to new challenges.
+              </h2>
+              
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Section Start -->
+    <section id="about" class="w-full h-screen flex items-center justify-center">
+      <div class="container mx-auto pt-6 lg:px-[120px] lg:pt-0">
+          <div class="">
+              <div class="hover:scale-110 transition duration-300 w-[200px] h-[200px] mx-auto rounded-full overflow-hidden mb-6 lg:w-[300px] lg:h-[300px] lg:mb-8 border-2 p-2 border-dashed border-red dark:border-blue">
+                  <img class="w-full h-full object-cover rounded-full" src="dist/img/ridho.jpg" alt="">
+              </div>
+              <div class="px-6">
+                  <div class="mb-3">
+                    <div class="text-lg text-red font-bold mb-3 lg:text-4xl lg:mb-5 lg:text-center flex items-center lg:justify-center hover:scale-110 transition duration-300
+                    dark:text-blue">
+                        About Me <img loading="lazy" class="w-10 lg:w-16" src="dist/img/anime (12).gif" alt="">
+                    </div>
+                  </div>
+                  <h3 class="text-xs text-dark mb-3 lg:text-lg lg:text-center hover:scale-110 transition duration-300
+                  dark:text-light">
+                      Hello, I am Ridho Ramadhan. But feel free to call me Ridho.
+                  </h3>
+                  <p class="text-xs text-dark mb-3 lg:text-lg lg:text-center hover:scale-110 transition duration-300
+                  dark:text-light">
+                    With 3 years of professional experience, I have worked across multiple roles, including Software Engineer, 
+                    UI/UX Designer, Graphic Designer, and Technical Presales. These experiences have allowed me to develop a strong 
+                    foundation in technology, design, problem-solving, and communication.
+                  </p>
+                  <p class="text-xs text-dark lg:text-lg lg:text-center hover:scale-110 transition duration-300
+                  dark:text-light">
+                    I enjoy bridging the gap between technical solutions and business needs, whether through software development, 
+                    product presentations, or AI-driven solutions. Working in different environments has strengthened my ability to 
+                    collaborate with diverse teams, adapt quickly, and continuously learn new skills.
+                  </p>
+              </div>
+          </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Skill Section Start -->
+    <section id="skill" class="py-20">
+      <div class="container px-6 lg:px-[120px]">
+
+        <h3 class="text-red text-center text-lg font-bold py-3 lg:text-2xl dark:text-blue animate-bounce">
+          Skill Set
+        </h3>
+
+        <div class="border-2 border-dashed border-red rounded-2xl p-4 overflow-hidden dark:border-blue">
+
+          <!-- Cards -->
+          <div class="grid gap-4 lg:grid-cols-3">
+
+            <!-- Technical -->
+            <div class="bg-dark-50 rounded-xl p-6 dark:bg-light">
+
+              <h4 class="text-center text-2xl text-red font-bold mb-8 dark:text-blue animate-pulse">
+                Technical
+              </h4>
+              
+              <div class="grid grid-cols-2 gap-y-4 mt-6">
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Laravel</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">JavaScript</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">TailwindCSS</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">React</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Python</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">MySQL</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Flutter</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Responsive Design </span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">OCR AI</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Workflow Automation</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Technical Presales</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Product Demo</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">API Integration</span>
+                </div>
+              </div>
+              <p class="mt-8 text-xs lg:text-sm dark:text-blues text-red text-center hover:scale-110 transition duration-300">
+                I build web applications and digital solutions using modern technologies such as Laravel, JavaScript, and Tailwind CSS. I enjoy creating systems that are not only functional but also intuitive and user-friendly.
+              </p>
+
+            </div>
+
+            <!-- Design -->
+            <div class="bg-dark-50 rounded-xl p-6 dark:bg-light">
+
+              <h4 class="text-center text-2xl text-red font-bold mb-8 dark:text-blue animate-pulse">
+                Design
+              </h4>
+              
+              <div class="grid grid-cols-2 gap-y-4 mt-6">
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">UI/UX Design</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Wireframing</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Prototyping</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Responsive Design</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Figma</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Adobe Photoshop</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Adobe Illustrator</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Adobe Premiere Pro</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Graphic Design</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Typoghrapy</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Sosial Media Design</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Design Thinking</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+                
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Branding</span>
+                </div>
+              </div>
+
+              <p class="mt-8 text-xs lg:text-sm dark:text-blues text-red text-center hover:scale-110 transition duration-300">
+              I create UI/UX designs by adapting project requirements into intuitive and visually appealing interfaces. My focus is on balancing aesthetics, usability, and user experience.
+              </p>
+
+            </div>
+
+            <!-- Creative -->
+            <div class="bg-dark-50 rounded-xl p-6 dark:bg-light">
+
+              <h4 class="text-center text-2xl text-red font-bold mb-8 dark:text-blue animate-pulse">
+                Creative
+              </h4>
+              
+              <div class="grid grid-cols-2 gap-y-4 mt-6">
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Content Creation</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Script Writing</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Photography </span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Video Editing</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Clothing Rework</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Illustration</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Digital Art</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Painting</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Sketching</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">DIY Projects</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+
+                <div class="flex items-center gap-2 hover:scale-110 transition duration-300">
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Technical Presales</span>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 text-right w-full hover:scale-110 transition duration-300">
+                    <span class="text-xs lg:text-sm text-light dark:text-dark font-bold">Product Demo</span>
+                    <div class="w-2 h-2 rounded-full text-red dark:text-blue relative top-[-8px]">✦</div>
+                </div>
+              </div>
+
+              <p class="mt-8 text-xs lg:text-sm dark:text-blues text-red text-center hover:scale-110 transition duration-300">
+                Beyond technology, I enjoy exploring creativity in many forms, from graphic design and photography to DIY projects, interior illustrations, and fashion reworks. For me, creativity is a way to transform ordinary ideas into unique experiences and meaningful stories.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- Running logos -->
+          <div class="relative mt-14 mb-10 overflow-hidden">
+
+            <div class="marquee flex gap-12 items-center">
+
+              <a href="https://laravel.com/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Laravel.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://tailwindcss.com/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Tailwindcss6.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://www.figma.com/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Figma.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://react.dev/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/React.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://github.com/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Github.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://www.python.org/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Python.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://flutter.dev/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Flutter.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/HTML.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://photoshop.adobe.com/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Photoshop.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+
+              <!-- duplicate -->
+
+              <a href="https://laravel.com/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Laravel.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://tailwindcss.com/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Tailwindcss6.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://www.figma.com/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Figma.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://react.dev/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/React.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://github.com/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Github.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://www.python.org/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Python.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://flutter.dev/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Flutter.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/HTML.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+              <a href="https://photoshop.adobe.com/" target="_blank">
+                <img loading="lazy" src="./dist/img/tech/Photoshop.png" class="h-20 hover:scale-125 transition duration-300">
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- Skill Section End -->
+
+    <!-- Works Section Start -->
+    <section id="works" class="py-20">
+      <div class="container lg:px-[120px]">
+        <h3 id="project-heading" class="text-red px-6 text-center text-lg font-bold py-3 lg:text-2xl animate-bounce dark:text-blue">Software Project</h3>
+        <!-- Toggle Project Start -->
+        <div class="mx-auto grid w-[320px] grid-cols-2 gap-2 rounded-md bg-dark-50 p-2
+              lg:w-[700px] lg:grid-cols-4 dark:bg-light">
+
+            <button id="btnSoftware"
+                class="toggle-btn rounded-md px-4 py-3 text-xs font-semibold text-light
+                hover:bg-gray-400 lg:text-sm dark:text-dark">
+                Software
+            </button>
+
+            <button id="btnDesign"
+                class="toggle-btn rounded-md px-4 py-3 text-xs font-semibold text-light
+                hover:bg-gray-400 lg:text-sm dark:text-dark">
+                UI/UX
+            </button>
+
+            <button id="btnGraphic"
+                class="toggle-btn rounded-md px-4 py-3 text-xs font-semibold text-light
+                hover:bg-gray-400 lg:text-sm dark:text-dark">
+                Graphic Design
+            </button>
+
+            <button id="btnCreative"
+                class="toggle-btn rounded-md px-4 py-3 text-xs font-semibold text-light
+                hover:bg-gray-400 lg:text-sm dark:text-dark">
+                Creative Corner
+            </button>
+        </div>        
+        <!-- Toggle Project End -->
+
+        <div id="content-software" class="mb-4">
+          <!-- Konten untuk "Project Software" -->
+            <!-- 247robot -->
+            <a class="relative" href="https://www.247robot.id">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/247robot.png" alt="24/7 Robot">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4 dark:text-dark">
+                        <h2>24/7 Robot</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 14 December 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">24/7Robot is an AI robotics platform that provides autonomous service and delivery robots to help businesses improve operational efficiency, reduce labor costs, and enhance customer experiences. The website showcases various robotic solutions, such as delivery robots and reception robots, designed for industries including restaurants, hospitals, offices, and retail environments.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#fb503b] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Laravel</span>
+                      <span class="inline-block bg-[#f0db4f] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2">JavaScript</span>
+                      <span class="inline-block bg-[#3490dc] rounded-full px-3 py-1 text-xs font-semibold text-dark">Tailwind css</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            
+            <!-- aktivo -->
+            <a class="relative" href="https://www.aktivo.id">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/aktivo.png" alt="Aktivo">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Aktivo</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px]  lg:text-xs">Created At 09 October 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">Aktivo is a healthcare technology platform that provides smart solutions and innovative products to improve patient safety and patient experience. The website showcases various technologies and systems designed to support hospitals, clinics, and pharmacies in accelerating their digital transformation toward Smart Healthcare and Healthcare 5.0.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#fb503b] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Laravel</span>
+                      <span class="inline-block bg-[#f0db4f] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2">JavaScript</span>
+                      <span class="inline-block bg-[#3490dc] rounded-full px-3 py-1 text-xs font-semibold text-dark">Tailwind css</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Intessa -->
+            <a class="relative" href="https://www.intessa.id">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/intessa.png" alt="Intessa">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Intessa</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 24 September 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">INTESSA Automation is a technology company that provides industrial automation and digital transformation solutions for manufacturing and industrial sectors. The company specializes in IT/OT integration, Industry 4.0, data analytics, machine automation, and smart manufacturing technologies, helping businesses improve operational efficiency, productivity, and data-driven decision-making.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#fb503b] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Laravel</span>
+                      <span class="inline-block bg-[#f0db4f] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2">JavaScript</span>
+                      <span class="inline-block bg-[#3490dc] rounded-full px-3 py-1 text-xs font-semibold text-dark">Tailwind css</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Public Complaint -->
+            <a class="relative" href="#">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/Public Complaint.png" alt="Public Complaint Website">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Public Complaint Website</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 28 March 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">The application is a platform for the public to report incidents or complaints regarding various matters to relevant authorities.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#fb503b] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Laravel</span>
+                      <span class="inline-block bg-[#f0db4f] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2">JavaScript</span>
+                      <span class="inline-block bg-[#3490dc] rounded-full px-3 py-1 text-xs font-semibold text-dark">Tailwind css</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Wikrama Hotel -->
+            <a href="#">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/Wikrama Hotel.png" alt="Wikrama Hotel Website">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Wikrama Hotel Website</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 30 January 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">The Wikrama Hotel website is designed to make it easy for users to search, compare, and book hotel rooms online. The application displays information about prices and facilities.
+                      The application also provides a feature to quickly and easily book hotel rooms online. Users can choose the desired room type, select the check-in and check-out schedule, and make online payments.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#fb503b] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Laravel</span>
+                      <span class="inline-block bg-[#f0db4f] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2">JavaScript</span>
+                      <span class="inline-block bg-[#3490dc] rounded-full px-3 py-1 text-xs font-semibold text-dark">Tailwind css</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Heiwa Hotel -->
+            <a href="#">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/Heiwa Hotel.png" alt="Heiwa Hotel Website">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Heiwa Hotel Website</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 17 June 2022</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">The Heiwa Hotel website is designed to make it easy for users to search, compare, and book hotel rooms online. The application displays information about prices and facilities.
+                      The application also provides a feature to quickly and easily book hotel rooms online. Users can choose the desired room type, select the check-in and check-out schedule, and make online payments.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#fb503b] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Laravel</span>
+                      <span class="inline-block bg-[#71579C] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2">Bootstrap</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Library -->
+            <a href="#">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/Library.png" alt="Library Website">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Library Website</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 25 November 2021</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">Library application is an application designed for SMK Wikrama students to manage and search for books available in the school library. The application provides a user-friendly interface that allows students to easily access the library catalog and check the availability of books they are interested in.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#fb503b] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Laravel</span>
+                      <span class="inline-block bg-[#71579C] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2">Bootstrap</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- My Bias  -->
+            <a href="#">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/mybias.png" alt="My Bias Website">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>My Bias Mobile App</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 06 December 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">Mobile application designed for K-Pop fans to select their favorite idol or group member as their "bias".</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#5FC9F8] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2">Flutter</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div id="content-design" class="mb-4 hidden">
+          <!-- Konten untuk "UI/UX Design" -->
+
+            <!-- Remote Patient Monitoring App -->
+            <a class="relative" href="#">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/remotepatientmonitoring.png" alt="Remote Patient Monitoring App Design">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Remote Patient Monitoring App</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 2024</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">Remote Patient Monitoring is a digital healthcare platform designed to remotely monitor patients’ health conditions and vital signs. The system enables healthcare providers to track medical data such as blood glucose, blood pressure, heart rate, oxygen saturation, sleep patterns, and physical activity, supporting connected care and improving patient management.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#b4c4f4] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Figma</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Tech Care -->
+            <a class="relative" href="#">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/techcare.png" alt="Tech Care Design">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Tech Care</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">Tech Care is a smart hospital platform that enhances patient care and hospital operations through digital healthcare services. The system integrates features such as health monitoring, appointment scheduling, meal selection, medical prescriptions, patient education, billing inquiries, and nurse assistance, providing patients with a seamless and interactive healthcare experience.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#b4c4f4] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Figma</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Intessa -->
+            <a class="relative" href="https://www.intessa.id">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/intessa.png" alt="Intessa">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Intessa</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 24 September 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">INTESSA Automation is a technology company that provides industrial automation and digital transformation solutions for manufacturing and industrial sectors. The company specializes in IT/OT integration, Industry 4.0, data analytics, machine automation, and smart manufacturing technologies, helping businesses improve operational efficiency, productivity, and data-driven decision-making.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#b4c4f4] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Figma</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- RidMovies -->
+            <a class="relative" href="https://www.RidMovies.id">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/ridmovies.png" alt="RidMovies">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>RidMovies</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">RidMovies is an online streaming platform that provides access to movies, TV series, K-dramas, J-dramas, and anime. The website features a user-friendly interface with content discovery, personalized watchlists, and streaming capabilities, enabling users to browse and enjoy a wide range of entertainment content.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#b4c4f4] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Figma</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Nanonets Document Extractor -->
+            <a class="relative" href="">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/nanonetstesting.png" alt="Nanonets Document Extractor">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Nanonets Document Extractor</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">This web application simplifies document extraction by allowing users to upload and process various types of documents without accessing the Nanonets portal directly. Designed primarily for product demonstrations and events, it provides a faster and more user-friendly experience while showcasing AI-powered document processing capabilities.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#b4c4f4] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Figma</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Pretty Chaeyoung -->
+            <a class="relative" href="#">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/Pretty Chaeyoung.png" alt="Pretty Chaeyoung Design">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Pretty Chaeyoung</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 25 January 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">This project aims to design and develop an engaging and interactive digital profile for a popular idol. This profile provides fans with the opportunity to access comprehensive information about the idol, including biography, photos, videos, event schedules, and other exclusive content.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#b4c4f4] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Figma</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- RidFx Forums -->
+            <a class="relative" href="#">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/RidFx Forums.png" alt="RidFx Forums Design">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>RidFx Forums</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 20 June 2022</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">This project aims to designing and developing a user-friendly and engaging forum platform for fans of a popular YouTuber. This forum serves as a dedicated space for fans to connect, share their thoughts and experiences, and engage in discussions related to the YouTuber's content. The project aims to create a seamless and enjoyable user experience that fosters a sense of community among the fans.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#FF61F6] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Adobe XD</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Ramyaki -->
+            <a class="relative" href="#">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/Ramyaki.png" alt="Ramyaki Design">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Ramyaki</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 03 November 2022</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">
+                      This project aims to design and develop a website forum dedicated to fans of Kpop idols. The forum website provides fans with the opportunity to connect, interact, and engage in discussions about their favorite Kpop idols, music groups, songs, performances, and various related topics. In this project, my main focus as a UI/UX designer is to create an enjoyable, intuitive user experience that fosters a sense of community among the fans.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#FF61F6] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Adobe XD</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Wikrama Hotel -->
+            <a class="relative" href="#">
+              <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+              dark:lg:border-blue">
+                <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex
+                dark:bg-light project-card-outer">
+                  <img loading="lazy" class="w-[550px] project-card-img" src="dist/img/WikramaHotel.png" alt="Wikrama Hotel Design">
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="text-light font-bold text-sm mb-2 lg:text-xl lg:mb-4
+                      dark:text-dark">
+                        <h2>Wikrama Hotel</h2>
+                        <span class="text-red text-center dark:text-blue text-[8px] lg:text-xs">Created At 25 January 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm
+                      dark:text-dark-50">The Wikrama Hotel is designed to make it easy for users to search, compare, and book hotel rooms online. The application displays information about prices and facilities.
+                      The application also provides a feature to quickly and easily book hotel rooms online. Users can choose the desired room type, select the check-in and check-out schedule, and make online payments.</p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#b4c4f4] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Figma</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+        </div>
+        <div id="content-graphic" class="mb-4 hidden">
+        <!-- Konten untuk "UI/UX Design" -->
+
+            <!-- 24/7 Robot Logo -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/247robot.png" alt="24/7 Robot Logo">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/247robotblue.png" alt="24/7 Robot Logo">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/247robotwhite.png" alt="24/7 Robot Logo">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>24/7 Robot Logo</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 15 October 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A modern and bold logo designed for 24/7 Robot, representing innovation, technology, and a strong brand identity. 
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#FF9A00] rounded-full px-3 py-1 text-xs font-semibold text-dark">Illustrator</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Sri Asih Poster -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/sriasihposter.png" alt="Sri Asih Poster">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/postersriasih.png" alt="Sri Asih Poster">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>Sri Asih Poster</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 01 February 2024</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        Creative fan project where movie posters are redesigned to celebrate films through new visual styles and artistic expression.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#007DCC] rounded-full px-3 py-1 text-xs font-semibold text-dark">Photoshop</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- HealthVu Logo -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/healthvu.png" alt="HealthVu Logo">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/HealthVu Logo.png" alt="HealthVu Logo">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>HealthVu Logo</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 20 February 2024</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A fresh healthcare logo combining modern typography with a heartbeat element, highlighting technology, connectivity, and care.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#FF9A00] rounded-full px-3 py-1 text-xs font-semibold text-dark">Illustrator</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Aktivo Name Card -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/aktivocard.png" alt="Aktivo Name Card">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/aktivonamecard.png" alt="Aktivo Name Card">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>Aktivo Name Card</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 2024</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A clean and professional name card design that combines simplicity with a modern visual style. The layout is neat and easy to read, creating a strong and memorable first impression.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#b4c4f4] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Figma</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- SPIRA Logo -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/spira.png" alt="SPIRA Logo">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/spira3.png" alt="SPIRA Logo">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>SPIRA Logo</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 06 September 2023</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A clean and modern logo with bold geometric lettering, giving off a professional and innovative feel.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#FF9A00] rounded-full px-3 py-1 text-xs font-semibold text-dark">Illustrator</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Tilaka Banner -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/tilaka.png" alt="Tilaka Banner">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>Tilaka Banner</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 2024</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A clean and eye-catching banner designed to highlight the product, key features, and brand identity while keeping the overall look modern and engaging.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#FF9A00] rounded-full px-3 py-1 text-xs font-semibold text-dark">Illustrator</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Intessa Logo -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/intessa.png" alt="Intessa Logo">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/intessatransparent.png" alt="Intessa Logo">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>Intessa Logo</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 10 November 2025</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A bold geometric logo that feels modern, clean, and professional, with a strong tech-inspired look.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#007DCC] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Photoshop</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Pudu Robot Banner -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/pudu.png" alt="Pudu Robot Banner">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>Pudu Robot Banner</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 01 February 2024</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A clean and eye-catching banner designed to highlight the product, key features, and brand identity while keeping the overall look modern and engaging.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#FF9A00] rounded-full px-3 py-1 text-xs font-semibold text-dark">Illustrator</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- RidMovies Logo -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/ridmovies.png" alt="RidMovies Logo">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/RidMovies Logo.png" alt="RidMovies Logo">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>RidMovies Logo</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 2024</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A playful and energetic logo with a fun, creative vibe, perfect for an entertainment or movie-related brand.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#007DCC] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Photoshop</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Tech Talk Flyer -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/tech talk flyer.png" alt="Tech Talk Flyer">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/poster.png" alt="Tech Talk Flyer">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>Tech Talk Event Flyer</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 23 April 2024</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A creative and eye-catching flyer designed to capture attention, communicate key event information clearly, and create excitement around the event.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#007DCC] rounded-full px-3 py-1 text-xs font-semibold text-dark">Photoshop</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Sachi Logo -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/sachilogo.png" alt="Sachi Logo">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/graphicdesign/Sachi Logo.png" alt="Sachi Logo">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>Sachi Logo</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 2024</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A unique handwritten-style logo that feels artistic, expressive, and personal.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#007DCC] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Photoshop</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+        </div>
+        <div id="content-creative" class="mb-4 hidden">
+
+            <!-- Sketchbook Tour -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketchbooktour.png" alt="Sketchbook Tour Cover">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch1.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch2.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch3.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch4.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch5.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch6.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch7.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch8.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch9.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch10.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch11.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch12.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch13.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch14.png" alt="Sketch">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/sketch15.png" alt="Sketch">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>Sketchbook Tour</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Start from 2022 - Present</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A collection of sketches, ideas, experiments, and unfinished thoughts gathered throughout my creative process. A glimpse into the pages where ideas begin before they become finished works.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#B5B9F0] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">A5 Sketchbook</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Shirt Rework -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/shirtreworkcover.png" alt="Shirt Rework">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/shirtrework1.png" alt="Shirt Rework">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/shirtrework2.png" alt="Shirt Rework">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/shirtrework3.png" alt="Shirt Rework">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/shirtrework4.png" alt="Shirt Rework">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>Shirt Rework</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 14 June 2025</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A reworked shirt transformed into a boxy cut, using leftover fabric from the original hem to create a new button panel, finished with fireman clasp buckles.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#E63946] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Hand-sewn</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Burning In Silence Art -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/burninginsilences.png" alt="Burning In Silence">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/BurningInSilence.PNG" alt="Burning In Silence">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>Burning In Silence</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 15 May 2025</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A withered rose consumed by black flames, portraying a period of heartbreak, vulnerability, and overwhelming chaos. The rose represents a self slowly losing its bloom, while the flames embody the struggles that came from beyond. <br>
+                        <br>
+                        Digital artwork created on a mobile device as a personal form of visual expression.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#31A8FF] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">IbisPaint X</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Custom Laufey Crown -->
+            <div class="lg:border-2 lg:border-red text-red lg:border-dashed lg:p-2 rounded-md my-6 hover:scale-110 transition duration-300
+            dark:text-blue dark:lg:border-blue">
+              <div class="mx-auto w-72 bg-dark-50 shadow-lg rounded-md overflow-hidden lg:w-full lg:flex project-card-outer
+                dark:bg-light">
+                  <div class="project-carousel w-[550px] project-card-img">
+                    <div class="project-carousel-track">
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/laufeycrowncover.png" alt="Custom Laufey Crown">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/laufeycrown.png" alt="Custom Laufey Crown">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/laufeycrown1.png" alt="Custom Laufey Crown">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/laufeycrown2.png" alt="Custom Laufey Crown">
+                      </div>
+                      <div class="project-carousel-slide">
+                        <img loading="lazy" class="project-carousel-fg" src="dist/img/creativecorner/laufeycrown3.png" alt="Custom Laufey Crown">
+                      </div>
+                    </div>
+                    <button type="button" class="project-carousel-btn project-carousel-prev" aria-label="Gambar sebelumnya">‹</button>
+                    <button type="button" class="project-carousel-btn project-carousel-next" aria-label="Gambar berikutnya">›</button>
+                    <div class="project-carousel-dots"></div>
+                  </div>
+                  <div class="project-card-inner">
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-sm mb-2 lg:text-xl lg:mb-4 text-light dark:text-dark">
+                        <h2>Custom Laufey Crown</h2>
+                        <span class="text-red dark:text-blue text-[8px] lg:text-xs">Created At 9 May 2025</span>
+                      </div>
+                      <p class="text-gray-400 text-xs lg:text-sm dark:text-dark-50">
+                        A custom-made Laufey crown created as a personal fan project for her concert. Designed and crafted by hand, combining delicate details with a dreamy aesthetic inspired by Laufey’s visual identity and music.
+                      </p>
+                    </div>
+                    <div class="px-6 py-4 project-card-badges">
+                      <span class="inline-block bg-[#F4D35E] rounded-full px-3 py-1 text-xs font-semibold text-dark mr-2 mb-2">Flannel</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Works Section End -->
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="px-6 w-full h-screen flex items-center justify-center">
+      <div class="container mx-auto lg:px-[120px] lg:flex lg:flex-row-reverse">
+        <div class="order-first mx-auto w-[200px] h-[200px] mb-10 lg:w-[400px] lg:h-[400px] lg:mb-8 hover:animate-shake relative">
+          <img loading="lazy" class="w-full " src="dist/img/anime (4).gif" alt="gif">
+          <div class="relative top-[-330px] lg:top-[-400px] left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+            <p class="text-red lg:text-2xl mt-[500px] font-bold">Don't touch me!!</p>
+          </div>
+        </div>
+        <div class="lg:w-[550px]">
+          <h2 class="text-lg text-red font-semibold mb-2 lg:text-4xl lg:mb-5 animate-pulse
+          dark:text-blue">Get In Touch With Me!</h2>
+          <h3 class="text-xs text-gray-700 font-semibold mb-8 lg:text-lg hover:scale-110 transition duration-300
+          dark:text-light">I'm excited to expand my network and connect with like-minded individuals. Whether you have a project you'd like to collaborate on, or just want to chat about the latest trends in the industry, I'd love to hear from you. Don't hesitate to reach out, let's connect and explore the endless possibilities of working together!</h3>
+          <div>
+            <h3 class="text-lg text-red font-semibold mb-2 lg:text-4xl lg:mb-5 animate-pulse
+            dark:text-blue">Contact Info</h3>
+            <p class="hover:scale-110 transition duration-300 text-xs text-gray-700 mb-2 lg:text-lg
+            dark:text-light">Email - <a class="underline" href="mailto:rridhorramadhann@gmail.com">rridhorramadhann@gmail.com</a></p>
+            <p class="hover:scale-110 transition duration-300 text-xs text-gray-700 mb-2 lg:text-lg
+            dark:text-light">Github - <a class="underline" href="https://github.com/Hi-Rid">Hi-Rid</a></p>
+            <p class="hover:scale-110 transition duration-300 text-xs text-gray-700 mb-2 lg:text-lg
+            dark:text-light">LinkedIn - <a class="underline" href="https://www.linkedin.com/in/ridho-ramadhan/">Ridho Ramadhan</a></p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section End -->
+
+  <!-- Footer Start -->
+  <footer class="py-4">
+    <div class="container mx-auto px-4">
+      <p class="text-center text-dark text-xs italic
+      dark:text-light">
+        Ridho Ramadhan &copy; 2026 - Life is too short to cry for anything
+      </p>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+  <!-- Back To Top Start -->
+  <a id="to-top" class="fixed z-[999] hidden bottom-4 p-4 right-4 w-14 h-14 border-2 border-dark-50 border-dashed rounded-full hover:bg-red text-red group animate-bounce
+  dark:border-light dark:hover:bg-blue" href="#home">
+    <svg class="text-dark-50 group-hover:text-dark-50
+    dark:text-light dark:group-hover:text-light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polygon points="32 120 128 24 224 120 176 120 176 152 80 152 80 120 32 120" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="176" y1="216" x2="80" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="176" y1="184" x2="80" y2="184" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+  </a>
+  <!-- Back To Top End -->
+
+  <script src="src/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,549 @@
+.snowflake {
+  position: fixed;
+  z-index: -1;
+  color: #000;
+  font-size: 1em;
+  font-family: Arial;
+  text-shadow: 0 0 1px #000;
+}
+
+.dark .snowflake {
+  color: #fff;
+}
+
+.active-link {
+  color: #ce2626;
+}
+
+.dark .active-link {
+  color: #79b8ff;
+}
+
+#light-btn.active {
+  color: #ce2626;
+}
+
+.dark #dark-btn.active {
+  color: #79b8ff;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-6px, 6px);
+  }
+  50% {
+    transform: translate(-6px, -6px);
+  }
+  75% {
+    transform: translate(6px, 6px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.hover\:animate-shake:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.animate-bounce {
+  animation: bounce 3s infinite;
+}
+
+@-webkit-keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@-webkit-keyframes snowflakes-shake {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(80px);
+    transform: translateX(80px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+@keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes snowflakes-shake {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.snowflake {
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+  -webkit-animation-duration: 10s, 3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+}
+.snowflake:nth-of-type(0) {
+  left: 1%;
+  -webkit-animation-delay: 0s, 0s;
+  animation-delay: 0s, 0s;
+}
+.snowflake:nth-of-type(1) {
+  left: 10%;
+  -webkit-animation-delay: 1s, 1s;
+  animation-delay: 1s, 1s;
+}
+.snowflake:nth-of-type(2) {
+  left: 20%;
+  -webkit-animation-delay: 6s, 0.5s;
+  animation-delay: 6s, 0.5s;
+}
+.snowflake:nth-of-type(3) {
+  left: 30%;
+  -webkit-animation-delay: 4s, 2s;
+  animation-delay: 4s, 2s;
+}
+.snowflake:nth-of-type(4) {
+  left: 40%;
+  -webkit-animation-delay: 2s, 2s;
+  animation-delay: 2s, 2s;
+}
+.snowflake:nth-of-type(5) {
+  left: 50%;
+  -webkit-animation-delay: 8s, 3s;
+  animation-delay: 8s, 3s;
+}
+.snowflake:nth-of-type(6) {
+  left: 60%;
+  -webkit-animation-delay: 6s, 2s;
+  animation-delay: 6s, 2s;
+}
+.snowflake:nth-of-type(7) {
+  left: 70%;
+  -webkit-animation-delay: 2.5s, 1s;
+  animation-delay: 2.5s, 1s;
+}
+.snowflake:nth-of-type(8) {
+  left: 80%;
+  -webkit-animation-delay: 1s, 0s;
+  animation-delay: 1s, 0s;
+}
+.snowflake:nth-of-type(9) {
+  left: 90%;
+  -webkit-animation-delay: 3s, 1.5s;
+  animation-delay: 3s, 1.5s;
+}
+/* Demo Purpose Only*/
+.demo {
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  padding: 15px 0;
+  text-align: center;
+}
+.demo a {
+  font-family: "Raleway", sans-serif;
+  color: #000;
+}
+
+.toggle-slider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 600px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#slider-text {
+  margin-left: 10px;
+}
+
+#content-software,
+#content-design {
+  margin-top: 20px;
+}
+
+.toggle-btn.active {
+  background-color: var(--bg-active);
+  color: var(--text-active);
+}
+
+.toggle-btn.active {
+  background-color: #ce2626;
+  color: #fbfbfb;
+}
+
+.dark .toggle-btn.active {
+  background-color: #79b8ff;
+  color: #1e1f22;
+}
+
+.marquee {
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Project card - keeps tech badges pinned below the description,
+   even when the description text is long */
+.project-card-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-badges {
+  margin-top: auto;
+}
+
+@media (min-width: 1024px) {
+  .project-card-outer {
+    min-height: 300px;
+  }
+
+  .project-card-img {
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .project-card-inner {
+    justify-content: space-between;
+    height: 100%;
+    flex: 1 1 0%;
+  }
+}
+
+/* Project image carousel (multi-image projects, e.g. Graphic Design) */
+.project-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.35s ease;
+}
+
+/* Each slide is a stacked layer: blurred background fills the box,
+   sharp foreground image sits centered without being cropped/zoomed */
+.project-carousel-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: rgba(251, 251, 251, 0.7); /* light mode, 50% opacity */
+}
+
+.dark .project-carousel-slide {
+  background: rgba(5, 5, 5, 0.2); /* dark mode, 50% opacity */
+}
+
+.project-carousel-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(20px);
+  transform: scale(
+    1.15
+  ); /* hides the sharp blur edge from peeking at the border */
+}
+
+.project-carousel-fg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (min-width: 1024px) {
+  .project-carousel {
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+}
+
+.project-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.project-carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.project-carousel-prev {
+  left: 10px;
+}
+
+.project-carousel-next {
+  right: 10px;
+}
+
+.project-carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  z-index: 10;
+}
+
+.project-carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.815);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, width 0.2s;
+}
+
+.project-carousel-dot.active {
+  background: #fff;
+  width: 16px;
+}
+
+/* Custom Sparkle Cursor (desktop/mouse only, disabled otomatis di touch device) */
+@media (hover: hover) and (pointer: fine) {
+  body, a, button {
+    cursor: none;
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  color: #CE2626;
+  will-change: transform;
+}
+
+.dark .custom-cursor {
+  color: #79B8FF;
+}
+
+.cursor-particle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  color: #CE2626;
+  filter: drop-shadow(0 0 4px currentColor) drop-shadow(0 0 8px currentColor);
+  animation: cursor-particle-fade 1s ease-out forwards;
+}
+
+.dark .cursor-particle {
+  color: #79B8FF;
+}
+
+@keyframes cursor-particle-fade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(var(--start-rotate, 0deg));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.15) rotate(var(--end-rotate, 45deg));
+  }
+}
+
+/* Background floating card suit icons */
+.card-suit {
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  color: #CE2626;
+  opacity: 0;
+}
+
+.dark .card-suit {
+  color: #79B8FF;
+}
+
+@keyframes card-suit-fade {
+  0%, 100% { opacity: 0; }
+  15%, 85% { opacity: 0.15; }
+}
+
+@keyframes card-suit-drift-1 {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  20%  { transform: translate(25vw, -15vh) rotate(30deg); }
+  45%  { transform: translate(10vw, 20vh) rotate(-20deg); }
+  70%  { transform: translate(-20vw, 10vh) rotate(15deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes card-suit-drift-2 {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(-22vw, 18vh) rotate(-25deg); }
+  50%  { transform: translate(15vw, -10vh) rotate(18deg); }
+  75%  { transform: translate(20vw, 15vh) rotate(-10deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.suit-spade {
+  top: 10%;
+  left: 5%;
+  width: 420px;
+  height: 420px;
+  animation: card-suit-fade 58s ease-in-out infinite, card-suit-drift-1 108s ease-in-out infinite;
+}
+
+.suit-club {
+  top: 55%;
+  left: 70%;
+  width: 440px;
+  height: 440px;
+  animation: card-suit-fade 66s ease-in-out infinite 6s, card-suit-drift-2 106s ease-in-out infinite 6s;
+}
+
+.suit-heart {
+  top: 70%;
+  left: 10%;
+  width: 490px;
+  height: 490px;
+  animation: card-suit-fade 50s ease-in-out infinite 12s, card-suit-drift-1 120s ease-in-out infinite 12s;
+}
+
+.suit-diamond {
+  top: 15%;
+  left: 65%;
+  width: 400px;
+  height: 400px;
+  animation: card-suit-fade 62s ease-in-out infinite 3s, card-suit-drift-2 162s ease-in-out infinite 3s;
+}
+
+@media (max-width: 1023px) {
+  .suit-spade   { width: 160px; height: 160px; }
+  .suit-club    { width: 130px; height: 130px; }
+  .suit-heart   { width: 150px; height: 150px; }
+  .suit-diamond { width: 110px; height: 110px; }
+}
